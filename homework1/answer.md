@@ -9,7 +9,7 @@
 2. запустить везде psql из под пользователя postgres
 
 ```bash
-docker exec -ti homework1_db_1 bash
+docker exec -ti postgres_db bash
 psql -U postgres
 ```
 
@@ -163,7 +163,7 @@ commit;
   Запись видна. В новой транзакции видено уже новый измененный в 1 сессии снепшот.
   ```
 
-![alt text](image-10.png)  
+![alt text](image-10.png)
 
 # Адрес проекта
 
