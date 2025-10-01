@@ -106,6 +106,10 @@ BEGIN
     END LOOP;
 END $$;
 
+-- добавим партицию по умолчанию
+CREATE TABLE nvv_year.bookings_other PARTITION OF nvv_year.bookings DEFAULT;
+CREATE TABLE nvv_month.bookings_other PARTITION OF nvv_month.bookings DEFAULT;
+
 --вставим данные в обе схемы из исходной
 insert into nvv_year.bookings overriding system value select * from bookings.bookings;
 insert into nvv_month.bookings overriding system value select * from bookings.bookings;
